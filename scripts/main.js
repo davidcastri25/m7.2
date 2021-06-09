@@ -58,16 +58,17 @@ let nomEx3 = ["D", "A", "V", "I", "D"];
 console.log("Partiendo del array: " + nomEx3);
 
 var nomMap = {};
-nomEx3.map(function(letra){
+nomEx3.map(function(letra){    
     //Crearemos una propiedad, el nombre de la cual será la letra que estamos iterando con map en este momento
     nomMap[letra] = (nomMap[letra] || 0) + 1;
     //Si la propiedad no existe, la creará y le dará valor 0, luego le sumará uno. Si la propiedad ya existe, le sumará 1 al valor que ya tenía
-    
+    //Similar al concepto optional chaining    
 });
 
 console.log(nomMap);
 
-/* Esto sería lo mismo pero con forEach
+/* ///////////////////////////// Esto sería lo mismo pero con forEach ///////////////////////////////////////////////////////////////
+
 let nomMap = contarLetras(nomEx3);
 
 console.log(nomMap);
@@ -75,17 +76,22 @@ console.log(nomMap);
 function contarLetras (arrLetras){
     let letrasContadas = {};
 
+    //forEach itera por elementos, estaría iterando sobre los valores de cada propiedad (el valor del índice 0 de un array, por ejemplo)
+
     arrLetras.forEach(function (letra){
-        if (letra in letrasContadas) {
+        //El elemento que está iterando forEach, ¿existe como propiedad dentro del objeto letras contadas?
+        if (letra in letrasContadas) { //Si existe, vamos a sumarle +1 a el valor de esta propiedad.
             letrasContadas[letra]++;
         }
-        else {
+        else { //Si no existe, crearemos una nueva propiedad y su valor será 1
             letrasContadas[letra] = 1;
         }
     });
 
     return letrasContadas;
 } */
+
+/////////////////////// Tercera forma de hacerlo ////////////////////////////////////////////////////////
 
 //Una tercera forma de hacerlo, en la que se necesita una forma para eliminar los duplicados del array que nos genera map. En este ejemplo el resultado del array no serán propiedades y valores, si no una string generada por concatenación.
 //let nomMap = nomEx3.map(function(letra){
