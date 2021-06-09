@@ -31,17 +31,13 @@ for (let i = 0; i < nomEx2.length; i++) {
     else {
         switch (nomEx2[i]) {
             case "A":
-                console.log("He trobat la VOCAL: " + nomEx2[i]);
-                break;
+                
             case "E":
-                console.log("He trobat la VOCAL: " + nomEx2[i]);
-                break;
+                
             case "I":
-                console.log("He trobat la VOCAL: " + nomEx2[i]);
-                break;
+                
             case "O":
-                console.log("He trobat la VOCAL: " + nomEx2[i]);
-                break;
+                
             case "U":
                 console.log("He trobat la VOCAL: " + nomEx2[i]);
                 break;
